@@ -18,7 +18,7 @@
    add file to batch for batch upload zip
 
 • `{i}dozip`
-   upload batch zip the files u added from `{i}azip`
+   upload batch zip the files you added from `{i}azip`
 
 """
 
@@ -54,7 +54,7 @@ async def zipp(event):
         event.chat_id,
         xxx,
         force_document=True,
-        thumb="resources/extras/ultroid.jpg",
+        thumb="resources/extras/cipherx.jpg",
         caption=f"`{xxx.name}`",
         reply_to=reply,
     )
@@ -76,7 +76,7 @@ async def unzipp(event):
             file = reply.media.document
             mime_type = file.mime_type
             if "application" not in mime_type:
-                return await xx.edit("`Reply To zipped File`")
+                return await xx.edit("`Reply to zipped File`")
             image = await downloader(
                 reply.file.name, reply.media.document, xx, t, "Downloading..."
             )
@@ -111,7 +111,7 @@ async def unzipp(event):
                 event.chat_id,
                 xxx,
                 force_document=True,
-                thumb="resources/extras/ultroid.jpg",
+                thumb="resources/extras/cipherx.jpg",
                 caption=f"`{xxx.name}`",
             )
         await xx.delete()
@@ -137,7 +137,7 @@ async def azipp(event):
         else:
             file = await event.download_media(reply.media, "zip/")
     await xx.edit(
-        f"Downloaded `{file}` succesfully\nNow Reply To Other Files To Add And Zip all at once"
+        f"Downloaded `{file}` succesfully\nNow Reply to Other Files to Add And Zip all at once"
     )
 
 
@@ -145,20 +145,20 @@ async def azipp(event):
 async def do_zip(event):
     if not os.path.isdir("zip"):
         return await eor(
-            event, "First All Files Via {i}addzip then doZip to zip all files at one."
+            event, "First All Files Via {i}addzip then do Zip to zip all files at one."
         )
     xx = await eor(event, "`processing`")
-    await bash(f"zip -r ultroid.zip zip/*")
+    await bash(f"zip -r cipherx.zip zip/*")
     k = time.time()
-    xxx = await uploader("ultroid.zip", "ultroid.zip", k, xx, "Uploading...")
+    xxx = await uploader("cipherx.zip", "cipherx.zip", k, xx, "Uploading...")
     await ultroid_bot.send_file(
         event.chat_id,
         xxx,
         force_document=True,
-        thumb="resources/extras/ultroid.jpg",
+        thumb="resources/extras/cipherx.jpg",
     )
     os.system("rm -rf zip")
-    os.remove("ultroid.zip")
+    os.remove("cipherx.zip")
     await xx.delete()
 
 
