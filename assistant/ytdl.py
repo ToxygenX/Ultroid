@@ -12,7 +12,7 @@ import time
 from urllib.request import urlretrieve
 
 from numerize import numerize
-from pyUltroid.functions.all import *
+from cython.functions.all import *
 from telethon import Button
 from telethon.tl.types import DocumentAttributeAudio, DocumentAttributeVideo
 from telethon.tl.types import InputWebDocument as wb
@@ -31,7 +31,7 @@ async def _(event):
         fuk = event.builder.article(
             title="Search Something",
             thumb=wb(ytt, 0, "image/jpeg", []),
-            text="**YᴏᴜTᴜʙᴇ Sᴇᴀʀᴄʜ**\n\nYou didn't search anything",
+            text="**CɪᴘʜᴇʀX ᴇxᴄlusivᴇ ʙᴏᴛ YᴏᴜTᴜʙᴇ Sᴇᴀʀᴄʜ**\n\nYou didn't search anything",
             buttons=Button.switch_inline(
                 "Sᴇᴀʀᴄʜ Aɢᴀɪɴ",
                 query="yt ",
@@ -101,7 +101,7 @@ async def _(e):
     )
     _text = "`Select Your Format.`"
     if not _buttons:
-        _text = "`Error downloading from YouTube.\nTry Restarting your bot.`"
+        _text = "`Error downloading from YouTube.\nTry Restarting CɪᴘʜᴇʀX ᴇxᴄlusivᴇ ʙᴏᴛ.`"
     await e.edit(_text, buttons=_buttons)
 
 
@@ -139,7 +139,7 @@ async def _(event):
         os.rename(f"{ytdl_data['id']}.mp3", f"{title}.mp3")
         c_time = time.time()
         file = await uploader(
-            f"{title}.mp3", f"{title}.mp3", c_time, event, "Uploading " + title + "..."
+            f"{title}.mp3", f"{title}.mp3", c_time, event, "Uploading..." + title + "..."
         )
         attributes = [
             DocumentAttributeAudio(
@@ -180,7 +180,7 @@ async def _(event):
         hi, _ = await bash(f'mediainfo "{title}.mp4" | grep "Height"')
         c_time = time.time()
         file = await uploader(
-            f"{title}.mp4", f"{title}.mp4", c_time, event, "Uploading " + title + "..."
+            f"{title}.mp4", f"{title}.mp4", c_time, event, "Uploading..." + title + "..."
         )
         attributes = [
             DocumentAttributeVideo(
