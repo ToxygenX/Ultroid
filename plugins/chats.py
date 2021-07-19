@@ -44,7 +44,7 @@ async def _(e):
     except TypeError:
         return await eod(xx, "`Cant delete this chat`", time=10)
     except no_admin:
-        return await eod(xx, "`I m not an admin`", time=10)
+        return await eod(xx, "`I'm not an admin`", time=10)
     await e.client.send_message(
         int(udB.get("LOG_CHANNEL")), f"#Deleted\nDeleted {e.chat_id}"
     )
@@ -78,7 +78,7 @@ async def _(e):
         try:
             r = await e.client(
                 CreateChatRequest(
-                    users=["@missrose_bot"],
+                    users=["@LynXGroupManagerRobot"],
                     title=group_name,
                 ),
             )
@@ -86,7 +86,7 @@ async def _(e):
             await e.client(
                 DeleteChatUserRequest(
                     chat_id=created_chat_id,
-                    user_id="@missrose_bot",
+                    user_id="@LynXGroupManagerRobot",
                 ),
             )
             result = await e.client(
@@ -95,7 +95,7 @@ async def _(e):
                 ),
             )
             await xx.edit(
-                f"Your [{group_name}]({result.link}) Group Made Boss!",
+                f"Your [{group_name}]({result.link}) Group Made CɪᴘʜᴇʀX!",
                 link_preview=False,
             )
         except Exception as ex:
@@ -105,7 +105,7 @@ async def _(e):
             r = await e.client(
                 CreateChannelRequest(
                     title=group_name,
-                    about="Join @TeamUltroid",
+                    about="(c) CɪᴘʜᴇʀX ᴇxᴄlusivᴇ ʙᴏᴛ",
                     megagroup=False if type_of_group == "c" else True,
                 ),
             )
@@ -116,7 +116,7 @@ async def _(e):
                 ),
             )
             await xx.edit(
-                f"Your [{group_name}]({result.link}) Group/Channel Has been made Boss!",
+                f"Your [{group_name}]({result.link}) Group/Channel Has been made CɪᴘʜᴇʀX!",
                 link_preview=False,
             )
         except Exception as ex:
