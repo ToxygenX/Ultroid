@@ -5,7 +5,7 @@
 
 FROM programmingerror/ultroid:v0.0.2
 
-ENV TZ=Asia/Kolkata
+ENV TZ=Asia/Tehran
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get autoremove --purge
 
